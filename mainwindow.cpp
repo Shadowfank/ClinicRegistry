@@ -60,3 +60,4 @@ void MainWindow::on_pushButton_clicked()
     else
         QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
 }
+//pidor
