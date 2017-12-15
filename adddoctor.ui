@@ -103,9 +103,9 @@
    <widget class="QComboBox" name="day_">
     <property name="geometry">
      <rect>
-      <x>58</x>
+      <x>38</x>
       <y>20</y>
-      <width>101</width>
+      <width>121</width>
       <height>20</height>
      </rect>
     </property>
@@ -205,7 +205,7 @@
      <rect>
       <x>10</x>
       <y>110</y>
-      <width>135</width>
+      <width>221</width>
       <height>41</height>
      </rect>
     </property>
@@ -224,6 +224,16 @@
    </widget>
   </widget>
  </widget>
+ <tabstops>
+  <tabstop>sname</tabstop>
+  <tabstop>name</tabstop>
+  <tabstop>tname</tabstop>
+  <tabstop>specialty_</tabstop>
+  <tabstop>day_</tabstop>
+  <tabstop>time_one</tabstop>
+  <tabstop>time_two</tabstop>
+  <tabstop>pushButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

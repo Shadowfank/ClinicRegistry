@@ -4,6 +4,7 @@
 #include <QMessageBox>
 #include <QMainWindow>
 #include "doctorlist.h"
+#include "patientlist.h"
 
 namespace Ui {
 class MainWindow;
@@ -23,9 +24,12 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_pushButton_3_clicked();
+
 private:
     Ui::MainWindow *ui;
     doctorlist *d;
+    patientlist *s;
 };
 
 #endif // MAINWINDOW_H

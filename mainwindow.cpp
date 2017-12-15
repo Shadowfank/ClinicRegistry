@@ -67,3 +67,10 @@ void MainWindow::on_pushButton_2_clicked()
     d->setFixedSize(d->size());
     d->show();
 }
+
+void MainWindow::on_pushButton_3_clicked()
+{
+    s = new patientlist();
+    s->setFixedSize(s->size());
+    s->show();
+}

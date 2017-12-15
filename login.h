@@ -26,6 +26,8 @@ private slots:
 
     void on_show_pass_toggled(bool checked);
 
+    void on_lineEdit_password_returnPressed();
+
 private:
     Ui::login *ui;
     MainWindow  *mainWindow;

@@ -8,8 +8,8 @@ login::login(QWidget *parent) :
     ui->setupUi(this);
     db.connect();
     if (!db.r_db().open())
-        ui->dbstatus->setText("Виникли проблеми, перевірте з'єднання!");
-    else ui->dbstatus->setText("Підключено до БД...");
+        ui->dbstatus->setText("<font color=\"red\"><b>Виникли проблеми, перевірте з'єднання!</b></font>");
+    else ui->dbstatus->setText("<font color=\"green\"><b>Підключено до Бази Даних ✔</b></font>");
 
 }
 
@@ -26,7 +26,6 @@ void login::on_show_pass_toggled(bool checked)
 void login::on_login_Button_clicked()
 {
     QString username = ui->lineEdit_username->text();
-    //if(lineEdit_password )
     QString hashStr = QString("%1").arg(QString(QCryptographicHash::hash(ui->lineEdit_password->text().toUtf8(),QCryptographicHash::Sha256).toHex()));
     qDebug() << hashStr;
     if(db.log_in(username,hashStr)) {
@@ -46,4 +45,9 @@ void login::on_Guest_Button_clicked()
     d = new doctorlist();
     d->setFixedSize(d->size());
     d->show();
+}
+
+void login::on_lineEdit_password_returnPressed()
+{
+    on_login_Button_clicked();
 }
