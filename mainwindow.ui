@@ -155,7 +155,7 @@
       <string>Оберіть дату та час явки</string>
      </property>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>150</x>
@@ -188,7 +188,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -415,6 +415,26 @@
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>sname</tabstop>
+  <tabstop>name</tabstop>
+  <tabstop>tname</tabstop>
+  <tabstop>b_day</tabstop>
+  <tabstop>sex_</tabstop>
+  <tabstop>date_come</tabstop>
+  <tabstop>time_come</tabstop>
+  <tabstop>pushButton_4</tabstop>
+  <tabstop>name_doctor_</tabstop>
+  <tabstop>region_</tabstop>
+  <tabstop>city_</tabstop>
+  <tabstop>street_</tabstop>
+  <tabstop>house_</tabstop>
+  <tabstop>apartment_</tabstop>
+  <tabstop>phone_number_</tabstop>
+  <tabstop>pushButton</tabstop>
+  <tabstop>pushButton_2</tabstop>
+  <tabstop>pushButton_3</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

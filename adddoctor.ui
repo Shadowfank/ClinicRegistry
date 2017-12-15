@@ -38,7 +38,7 @@
    <property name="title">
     <string>Графік роботи</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -65,7 +65,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QTimeEdit" name="timeEdit"/>
+        <widget class="QTimeEdit" name="time_one"/>
        </item>
        <item>
         <widget class="QLabel" name="label_9">
@@ -75,33 +75,75 @@
         </widget>
        </item>
        <item>
-        <widget class="QTimeEdit" name="timeEdit_2"/>
+        <widget class="QTimeEdit" name="time_two"/>
        </item>
       </layout>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QLabel" name="label_6">
     <property name="geometry">
      <rect>
       <x>10</x>
       <y>20</y>
-      <width>151</width>
-      <height>22</height>
+      <width>40</width>
+      <height>20</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="horizontalLayout_2">
-     <item>
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>День</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QLineEdit" name="lineEdit_5"/>
-     </item>
-    </layout>
+    <property name="minimumSize">
+     <size>
+      <width>40</width>
+      <height>0</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>День</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="day_">
+    <property name="geometry">
+     <rect>
+      <x>58</x>
+      <y>20</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>Понеділок</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Вівторок</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Середа</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Четвер</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>П'ятниця</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Субота</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>Неділя</string>
+     </property>
+    </item>
    </widget>
   </widget>
   <widget class="QGroupBox" name="groupBox_2">
@@ -116,7 +158,7 @@
    <property name="title">
     <string>Дані про лікаря</string>
    </property>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -134,7 +176,7 @@
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QLineEdit" name="lineEdit"/>
+      <widget class="QLineEdit" name="sname"/>
      </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
@@ -144,7 +186,7 @@
       </widget>
      </item>
      <item row="1" column="1">
-      <widget class="QLineEdit" name="lineEdit_2"/>
+      <widget class="QLineEdit" name="name"/>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_3">
@@ -154,11 +196,11 @@
       </widget>
      </item>
      <item row="2" column="1">
-      <widget class="QLineEdit" name="lineEdit_3"/>
+      <widget class="QLineEdit" name="tname"/>
      </item>
     </layout>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -176,7 +218,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="lineEdit_4"/>
+      <widget class="QLineEdit" name="specialty_"/>
      </item>
     </layout>
    </widget>

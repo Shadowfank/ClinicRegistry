@@ -55,9 +55,15 @@ void MainWindow::on_pushButton_clicked()
     query.bindValue(":name_doctor",name_doctor);
 
     if (query.exec()){
-        QMessageBox::critical(this, tr("Збереження"), tr("Збережено"));
+        QMessageBox::information(this, tr("Збереження"), tr("Збережено"),QMessageBox::Ok);
     }
     else
         QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
 }
-//pidor
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    d = new doctorlist();
+    d->setFixedSize(d->size());
+    d->show();
+}
