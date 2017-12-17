@@ -2,6 +2,7 @@
 #define DOCTORLIST_H
 #include "adddoctor.h"
 #include <QWidget>
+#include "mainwindow.h"
 
 namespace Ui {
 class doctorlist;
@@ -12,7 +13,7 @@ class doctorlist : public QWidget
     Q_OBJECT
 
 public:
-    explicit doctorlist(QWidget *parent = 0);
+    explicit doctorlist(QWidget *parent = 0, class MainWindow *_prev= 0);
     ~doctorlist();
 
 private slots:
@@ -20,7 +21,8 @@ private slots:
 
 private:
     Ui::doctorlist *ui;
-    adddoctor *a;
+    class adddoctor *a;
+    class MainWindow *prev;
 };
 
 #endif // DOCTORLIST_H

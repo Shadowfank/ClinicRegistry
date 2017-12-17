@@ -8,7 +8,7 @@ login::login(QWidget *parent) :
     ui->setupUi(this);
     db.connect();
     if (!db.r_db().open())
-        ui->dbstatus->setText("<font color=\"red\"><b>Виникли проблеми, перевірте з'єднання!</b></font>");
+        ui->dbstatus->setText("<font color=\"red\"><b>Виникли проблеми зі з'єднанням!</b></font>");
     else ui->dbstatus->setText("<font color=\"green\"><b>Підключено до Бази Даних ✔</b></font>");
 
 }
@@ -41,7 +41,6 @@ void login::on_login_Button_clicked()
 
 void login::on_Guest_Button_clicked()
 {
-    hide();
     d = new doctorlist();
     d->setFixedSize(d->size());
     d->show();

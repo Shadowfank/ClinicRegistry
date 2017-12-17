@@ -1,8 +1,8 @@
 #include "doctorlist.h"
 #include "ui_doctorlist.h"
 
-doctorlist::doctorlist(QWidget *parent) :
-    QWidget(parent),
+doctorlist::doctorlist(QWidget *parent, class MainWindow *_prev) :
+    QWidget(parent), prev(_prev),
     ui(new Ui::doctorlist)
 {
     ui->setupUi(this);

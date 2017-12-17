@@ -5,11 +5,11 @@ database::database()
 }
 void database::connect()
 {
-db = QSqlDatabase::addDatabase("QMYSQL");
-db.setHostName("localhost");
-db.setDatabaseName("kyrsova");
-db.setUserName("root");
-db.setPassword("root");
+    db = QSqlDatabase::addDatabase("QMYSQL");
+    db.setHostName("147.135.135.165");
+    db.setDatabaseName("clinicregistry");
+    db.setUserName("shadowfank");
+    db.setPassword("2ksdf34kd");
 if (!db.open())
     qDebug() << db.lastError().text();
 else qDebug() << "Підключено";

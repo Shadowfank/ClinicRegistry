@@ -63,7 +63,7 @@ void MainWindow::on_pushButton_clicked()
 
 void MainWindow::on_pushButton_2_clicked()
 {
-    d = new doctorlist();
+    d = new doctorlist(0,this);
     d->setFixedSize(d->size());
     d->show();
 }

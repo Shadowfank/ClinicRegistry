@@ -28,8 +28,8 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
-    doctorlist *d;
-    patientlist *s;
+    class doctorlist *d;
+    class patientlist *s;
 };
 
 #endif // MAINWINDOW_H
