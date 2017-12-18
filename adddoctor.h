@@ -3,6 +3,8 @@
 #include "database.h"
 #include <QWidget>
 #include <QMessageBox>
+#include "mainwindow.h"
+#include "doctorlist.h"
 
 namespace Ui {
 class adddoctor;
@@ -21,6 +23,7 @@ private slots:
 
 private:
     Ui::adddoctor *ui;
+    class adddoctor *d;
 };
 
 #endif // ADDDOCTOR_H

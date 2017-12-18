@@ -56,6 +56,7 @@ void MainWindow::on_pushButton_clicked()
 
     if (query.exec()){
         QMessageBox::information(this, tr("Збереження"), tr("Збережено"),QMessageBox::Ok);
+        s->getpatient();
     }
     else
         QMessageBox::critical(this, tr("Помилка"), query.lastError().text());

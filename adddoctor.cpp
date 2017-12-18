@@ -40,6 +40,7 @@ void adddoctor::on_pushButton_clicked()
 
     if (query.exec()){
         QMessageBox::information(this, tr("Збереження"), tr("Збережено"),QMessageBox::Ok);
+    d->getdoctor();
     }
     else
         QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
