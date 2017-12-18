@@ -16,9 +16,9 @@ doctorlist::~doctorlist()
 
 void doctorlist::on_pushButton_3_clicked()
 {
-    d = new adddoctor();
-    d->setFixedSize(d->size());
-    d->show();
+    a = new adddoctor(0, this);
+    a->setFixedSize(a->size());
+    a->show();
 }
 
 void doctorlist::getdoctor()

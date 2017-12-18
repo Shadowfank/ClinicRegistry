@@ -1,8 +1,8 @@
 #include "adddoctor.h"
 #include "ui_adddoctor.h"
 
-adddoctor::adddoctor(QWidget *parent) :
-    QWidget(parent),
+adddoctor::adddoctor(QWidget *parent, class doctorlist *prev_) :
+    QWidget(parent), prev(prev_),
     ui(new Ui::adddoctor)
 {
     ui->setupUi(this);
@@ -40,7 +40,7 @@ void adddoctor::on_pushButton_clicked()
 
     if (query.exec()){
         QMessageBox::information(this, tr("Збереження"), tr("Збережено"),QMessageBox::Ok);
-    d->getdoctor();
+    prev->getdoctor();
     }
     else
         QMessageBox::critical(this, tr("Помилка"), query.lastError().text());

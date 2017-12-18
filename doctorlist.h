@@ -23,7 +23,7 @@ private slots:
 
 private:
     Ui::doctorlist *ui;
-    class adddoctor *d;
+    class adddoctor *a;
     class MainWindow *prev;
     database db;
     QSqlQueryModel *model;

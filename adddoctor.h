@@ -15,7 +15,7 @@ class adddoctor : public QWidget
     Q_OBJECT
 
 public:
-    explicit adddoctor(QWidget *parent = 0);
+    explicit adddoctor(QWidget *parent = 0, class doctorlist *prev_ = 0);
     ~adddoctor();
 
 private slots:
@@ -23,7 +23,8 @@ private slots:
 
 private:
     Ui::adddoctor *ui;
-    class adddoctor *d;
+    class adddoctor *a;
+    class doctorlist *prev;
 };
 
 #endif // ADDDOCTOR_H
