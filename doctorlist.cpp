@@ -40,4 +40,22 @@ void doctorlist::on_pushButton_6_clicked()
 void doctorlist::on_pushButton_4_clicked()
 {
 
+
+}
+
+void doctorlist::on_dserch_Button_clicked()
+{
+    database db;
+    QString surname;
+    QSqlQuery query;
+    model_ = new QSqlQueryModel();
+    query.prepare("SELECT * FROM doctors WHERE surname = ?");
+    query.bindValue(0, ui->doctor_serch->text());
+    model_->setQuery(query);
+
+    if (query.exec()){
+     QMessageBox::information(this, tr("Збереження"), tr("Збережено"),QMessageBox::Ok);
+    }
+    else
+        QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
 }

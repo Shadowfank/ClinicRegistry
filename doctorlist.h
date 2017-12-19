@@ -4,6 +4,7 @@
 #include <QWidget>
 #include "mainwindow.h"
 #include "adddoctor.h"
+#include "database.h"
 
 namespace Ui {
 class doctorlist;
@@ -25,12 +26,15 @@ private slots:
 
     void on_pushButton_4_clicked();
 
+    void on_dserch_Button_clicked();
+
 private:
     Ui::doctorlist *ui;
     class adddoctor *a;
     class MainWindow *prev;
     database db;
     QSqlQueryModel *model;
+    QSqlQueryModel *model_;
 };
 
 #endif // DOCTORLIST_H
