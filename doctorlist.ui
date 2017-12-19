@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>841</width>
-    <height>508</height>
+    <height>520</height>
    </rect>
   </property>
   <property name="focusPolicy">
@@ -16,12 +16,74 @@
   <property name="windowTitle">
    <string>Список лікарів</string>
   </property>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>480</y>
+     <width>102</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Добавити</string>
+   </property>
+  </widget>
+  <widget class="QTableView" name="tableDoctors">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>50</y>
+     <width>821</width>
+     <height>421</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>480</y>
+     <width>103</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Вилучити</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>229</x>
+     <y>480</y>
+     <width>102</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Редагувати</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>740</x>
+     <y>480</y>
+     <width>91</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Назад</string>
+   </property>
+  </widget>
   <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>40</y>
-     <width>471</width>
+     <y>10</y>
+     <width>321</width>
      <height>25</height>
     </rect>
    </property>
@@ -40,6 +102,18 @@
       </property>
      </widget>
     </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>10</y>
+     <width>229</width>
+     <height>25</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
     <item>
      <widget class="QLabel" name="label_2">
       <property name="text">
@@ -62,51 +136,6 @@
      </widget>
     </item>
    </layout>
-  </widget>
-  <widget class="QPushButton" name="pushButton_3">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>10</y>
-     <width>101</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="text">
-    <string>Добавити лікаря</string>
-   </property>
-  </widget>
-  <widget class="QWidget" name="layoutWidget">
-   <property name="geometry">
-    <rect>
-     <x>310</x>
-     <y>10</y>
-     <width>171</width>
-     <height>25</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QComboBox" name="comboBox"/>
-    </item>
-    <item>
-     <widget class="QPushButton" name="pushButton_4">
-      <property name="text">
-       <string>Вилучити лікаря</string>
-      </property>
-     </widget>
-    </item>
-   </layout>
-  </widget>
-  <widget class="QTableView" name="tableDoctors">
-   <property name="geometry">
-    <rect>
-     <x>10</x>
-     <y>70</y>
-     <width>821</width>
-     <height>421</height>
-    </rect>
-   </property>
   </widget>
  </widget>
  <resources/>

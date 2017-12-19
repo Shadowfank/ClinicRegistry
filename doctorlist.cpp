@@ -25,8 +25,19 @@ void doctorlist::getdoctor()
 {
     QSqlQuery query = QSqlQuery(db.r_db());
     model = new QSqlQueryModel();
-    query.prepare("select `id`, `surname`, `fname`, `thname`, `specialty`, `day`, `time_1`, `time_2` from doctors");
+    query.prepare("select `surname`, `fname`, `thname`, `specialty`, `day`, `time_1`, `time_2` from doctors");
     query.exec();
     model->setQuery(query);
     ui->tableDoctors->setModel(model);
+}
+
+void doctorlist::on_pushButton_6_clicked()
+{
+    hide();
+    prev->show();
+}
+
+void doctorlist::on_pushButton_4_clicked()
+{
+
 }
