@@ -38,6 +38,9 @@
      <height>421</height>
     </rect>
    </property>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
   </widget>
   <widget class="QPushButton" name="pushButton_4">
    <property name="geometry">
@@ -89,14 +92,14 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <item>
-     <widget class="QLineEdit" name="doctor_serch">
+     <widget class="QLineEdit" name="doctor_search">
       <property name="text">
        <string>Введіть ім'я лікаря</string>
       </property>
      </widget>
     </item>
     <item>
-     <widget class="QPushButton" name="dserch_Button">
+     <widget class="QPushButton" name="dsearch_Button">
       <property name="text">
        <string>Пошук</string>
       </property>

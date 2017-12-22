@@ -22,11 +22,17 @@ public:
 private slots:
     void on_pushButton_3_clicked();
 
-    void on_pushButton_6_clicked();
+   // void on_pushButton_6_clicked();
 
     void on_pushButton_4_clicked();
 
-    void on_dserch_Button_clicked();
+    void on_tableDoctors_clicked(const QModelIndex &index);
+
+    void on_pushButton_5_clicked();
+
+    void on_dsearch_Button_clicked();
+
+    void on_pushButton_6_clicked();
 
 private:
     Ui::doctorlist *ui;
@@ -34,7 +40,7 @@ private:
     class MainWindow *prev;
     database db;
     QSqlQueryModel *model;
-    QSqlQueryModel *model_;
+    int doctorid;
 };
 
 #endif // DOCTORLIST_H

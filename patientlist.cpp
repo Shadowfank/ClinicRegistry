@@ -29,3 +29,21 @@ void patientlist::getpatient()
     previous->show();
 }
 */
+
+void patientlist::on_pushButton_4_clicked()
+{
+
+}
+
+void patientlist::on_pushButton_clicked()
+{
+    database db;
+    QString surname;
+    QSqlQuery query;
+    model = new QSqlQueryModel();
+    query.prepare("SELECT * FROM doctors WHERE surname like '%"+ui->patient_search->text()+"%'");
+    query.exec();
+    qDebug()<<query.lastError();
+    model->setQuery(query);
+    ui->tablePatients->setModel(model);
+}
