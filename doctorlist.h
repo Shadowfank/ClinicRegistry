@@ -28,11 +28,13 @@ private slots:
 
     void on_tableDoctors_clicked(const QModelIndex &index);
 
-    void on_pushButton_5_clicked();
-
     void on_dsearch_Button_clicked();
 
     void on_pushButton_6_clicked();
+
+    void on_pushButton_clicked();
+
+    void on_pushButton_2_clicked();
 
 private:
     Ui::doctorlist *ui;

@@ -75,3 +75,55 @@ void MainWindow::on_pushButton_3_clicked()
     s->setFixedSize(s->size());
     s->show();
 }
+
+void MainWindow::on_pushButton_5_clicked()
+{
+    database db;
+    QString surname, fname, thname, region, city, street, house, apartment, phone_number, name_doctor, id;
+    QDate birth_day, datecome;
+    QTime timecome;
+    bool sex;
+
+    id=ui->id_->text();
+    surname=ui->sname->text();
+    fname=ui->name->text();
+    thname=ui->tname->text();
+    birth_day=ui->b_day->date();
+    datecome=ui->date_come->date();
+    timecome=ui->time_come->time();
+    sex =(bool) ui->sex_->currentIndex();
+    region=ui->region_->text();
+    city=ui->city_->text();
+    street=ui->street_->text();
+    house=ui->house_->text();
+    apartment=ui->apartment_->text();
+    phone_number=ui->phone_number_->text();
+    name_doctor=ui->name_doctor_->text();
+
+    QSqlQuery query =  QSqlQuery(db.r_db());
+    query.prepare("replace into patients (`id`, `surname`, `fname`, `thname`, `birth_day`, `datecome`, `timecome`, `sex`, `region`, `city`, `street`, `house`, `apartment`, `phone_number`, `name_doctor`)"
+               "values (:id,:surname,:fname,:thname,:birth_day,:datecome,:timecome,:sex,:region,:city,:street,:house,:apartment, :phone_number, :name_doctor)");
+    query.bindValue(":id",id);
+    query.bindValue(":surname",surname);
+    query.bindValue(":fname",fname);
+    query.bindValue(":thname",thname);
+    query.bindValue(":birth_day",birth_day);
+    query.bindValue(":datecome",datecome);
+    query.bindValue(":timecome",timecome);
+    query.bindValue(":sex",sex);
+    query.bindValue(":region",region);
+    query.bindValue(":city",city);
+    query.bindValue(":street",street);
+    query.bindValue(":house",house);
+    query.bindValue(":apartment",apartment);
+    query.bindValue(":phone_number",phone_number);
+    query.bindValue(":name_doctor",name_doctor);
+
+    if(query.exec()){
+        QMessageBox::information(0,"Редагування даних","Дані оновлені!",QMessageBox::Ok);
+        qDebug() << query.lastError() << "\n" << query.lastQuery();
+        //getpatient();
+}
+    else
+          QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
+}

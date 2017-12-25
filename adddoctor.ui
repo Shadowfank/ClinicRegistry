@@ -16,14 +16,14 @@
   <widget class="QPushButton" name="pushButton">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>360</x>
      <y>150</y>
-     <width>121</width>
+     <width>81</width>
      <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>Записати в таблицю</string>
+    <string>Записати</string>
    </property>
   </widget>
   <widget class="QGroupBox" name="groupBox">
@@ -32,7 +32,7 @@
      <x>270</x>
      <y>20</y>
      <width>171</width>
-     <height>111</height>
+     <height>101</height>
     </rect>
    </property>
    <property name="title">
@@ -223,6 +223,41 @@
     </layout>
    </widget>
   </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>273</x>
+     <y>150</y>
+     <width>81</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Оновити</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="">
+   <property name="geometry">
+    <rect>
+     <x>270</x>
+     <y>125</y>
+     <width>171</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <widget class="QLabel" name="label_5">
+      <property name="text">
+       <string>ID</string>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QLineEdit" name="id_"/>
+    </item>
+   </layout>
+  </widget>
  </widget>
  <tabstops>
   <tabstop>sname</tabstop>
@@ -232,7 +267,6 @@
   <tabstop>day_</tabstop>
   <tabstop>time_one</tabstop>
   <tabstop>time_two</tabstop>
-  <tabstop>pushButton</tabstop>
  </tabstops>
  <resources/>
  <connections/>

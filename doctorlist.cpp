@@ -61,13 +61,6 @@ else
     QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
 }
 
-void doctorlist::on_pushButton_5_clicked()
-{
-    database db;
-    QSqlQuery query;
-
-}
-
 void doctorlist::on_dsearch_Button_clicked()
 {
     database db;
@@ -85,4 +78,30 @@ void doctorlist::on_pushButton_6_clicked()
 {
     hide();
     prev->show();
+}
+
+void doctorlist::on_pushButton_clicked()
+{
+    database db;
+    QString surname;
+    QSqlQuery query;
+    model = new QSqlQueryModel();
+    query.prepare("select * from doctors order by surname");
+    query.exec();
+    qDebug()<<query.lastError();
+    model->setQuery(query);
+    ui->tableDoctors->setModel(model);
+}
+
+void doctorlist::on_pushButton_2_clicked()
+{
+    database db;
+    QString surname;
+    QSqlQuery query;
+    model = new QSqlQueryModel();
+    query.prepare("select * from doctors order by surname desc");
+    query.exec();
+    qDebug()<<query.lastError();
+    model->setQuery(query);
+    ui->tableDoctors->setModel(model);
 }
