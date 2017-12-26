@@ -1,11 +1,42 @@
 #include "adddoctor.h"
 #include "ui_adddoctor.h"
 
-adddoctor::adddoctor(QWidget *parent, class doctorlist *prev_) :
-    QWidget(parent), prev(prev_),
+adddoctor::adddoctor(QWidget *parent, class doctorlist *prev_, bool _mode, int _docID) :
+    QWidget(parent), prev(prev_), docID(_docID), mode(_mode),
     ui(new Ui::adddoctor)
 {
     ui->setupUi(this);
+    if (mode)
+    {
+        database db;
+        QSqlQuery query =  QSqlQuery(db.r_db());
+        QString surname, fname, thname, specialty, day;
+        QTime time_1, time_2;
+
+
+        query.prepare("select `doctors`.`id`,`surname`, `fname`, `thname`, `specialty`, `day`, `time_1`, `time_2` from `doctors` where `doctors`.`id` = :id;");
+        query.bindValue(":id",docID);
+        query.exec();
+        while(query.next())
+        {
+            surname = query.value(1).toString();
+            fname= query.value(2).toString();
+            thname= query.value(3).toString();
+            specialty= query.value(4).toString();
+            day= query.value(5).toString();
+            time_1= query.value(6).toTime();
+            time_2= query.value(7).toTime();
+        }
+        qDebug()<<query.lastError()<<surname;
+
+        ui->sname->setText(surname);
+        ui->name->setText(fname);
+        ui->tname->setText(thname);
+        ui->specialty_->setText(specialty);
+        ui->day_->setCurrentText(day);
+        ui->time_one->setTime(time_1);
+        ui->time_two->setTime(time_2);
+    }
 }
 
 adddoctor::~adddoctor()
@@ -49,9 +80,8 @@ void adddoctor::on_pushButton_clicked()
 void adddoctor::on_pushButton_2_clicked()
 {
     database db;
-    QString surname, fname, thname, specialty, day, id;
+    QString surname, fname, thname, specialty, day;
     QTime time_1, time_2;
-    id=ui->id_->text();
     surname=ui->sname->text();
     fname=ui->name->text();
     thname=ui->tname->text();
@@ -63,7 +93,7 @@ void adddoctor::on_pushButton_2_clicked()
     QSqlQuery query =  QSqlQuery(db.r_db());
     query.prepare("replace into doctors (`id`, `surname`, `fname`, `thname`, `specialty`, `day`, `time_1`, `time_2`)"
                   "values (:id,:surname,:fname,:thname,:specialty,:day,:time_1,:time_2)");
-       query.bindValue(":id", id);
+       query.bindValue(":id", docID);
        query.bindValue(":surname", surname);
        query.bindValue(":fname", fname);
        query.bindValue(":thname", thname);
@@ -75,7 +105,7 @@ void adddoctor::on_pushButton_2_clicked()
     if(query.exec()){
         QMessageBox::information(0,"Редагування даних","Дані оновлені!",QMessageBox::Ok);
         qDebug() << query.lastError() << "\n" << query.lastQuery();
-        //prev->getdoctor();
+        prev->getdoctor();
 }
     else
           QMessageBox::critical(this, tr("Помилка"), query.lastError().text());

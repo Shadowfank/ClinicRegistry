@@ -112,6 +112,9 @@
      <height>20</height>
     </rect>
    </property>
+   <property name="text">
+    <string>root</string>
+   </property>
    <property name="echoMode">
     <enum>QLineEdit::Password</enum>
    </property>
@@ -124,6 +127,9 @@
      <width>221</width>
      <height>20</height>
     </rect>
+   </property>
+   <property name="text">
+    <string>admin</string>
    </property>
   </widget>
  </widget>

@@ -32,13 +32,13 @@ void login::on_login_Button_clicked()
             QMessageBox::information(this, "Вхід", "Логін та пароль правильні!");
             hide();
             mainWindow = new MainWindow(this);
+            mainWindow->setFixedSize(mainWindow->size());
             mainWindow->show();
         }
     else {
         QMessageBox::warning(this,"Вхід", "Логін або пароль не правильні!");
     }
 }
-
 void login::on_Guest_Button_clicked()
 {
     d = new doctorlist();

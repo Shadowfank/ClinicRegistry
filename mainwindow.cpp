@@ -84,7 +84,7 @@ void MainWindow::on_pushButton_5_clicked()
     QTime timecome;
     bool sex;
 
-    id=ui->id_->text();
+    //id=ui->id_->text();
     surname=ui->sname->text();
     fname=ui->name->text();
     thname=ui->tname->text();
@@ -103,7 +103,7 @@ void MainWindow::on_pushButton_5_clicked()
     QSqlQuery query =  QSqlQuery(db.r_db());
     query.prepare("replace into patients (`id`, `surname`, `fname`, `thname`, `birth_day`, `datecome`, `timecome`, `sex`, `region`, `city`, `street`, `house`, `apartment`, `phone_number`, `name_doctor`)"
                "values (:id,:surname,:fname,:thname,:birth_day,:datecome,:timecome,:sex,:region,:city,:street,:house,:apartment, :phone_number, :name_doctor)");
-    query.bindValue(":id",id);
+    //query.bindValue(":id",id);
     query.bindValue(":surname",surname);
     query.bindValue(":fname",fname);
     query.bindValue(":thname",thname);

@@ -105,3 +105,9 @@ void doctorlist::on_pushButton_2_clicked()
     model->setQuery(query);
     ui->tableDoctors->setModel(model);
 }
+void doctorlist::on_pushButton_5_clicked()
+{
+    a = new adddoctor(0, this, true, doctorid);
+    a->setFixedSize(a->size());
+    a->show();
+}

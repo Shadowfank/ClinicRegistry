@@ -87,3 +87,8 @@ void patientlist::on_pushButton_3_clicked()
     model->setQuery(query);
     ui->tablePatients->setModel(model);
 }
+
+void patientlist::on_pushButton_5_clicked()
+{
+
+}

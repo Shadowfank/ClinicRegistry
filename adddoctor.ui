@@ -32,7 +32,7 @@
      <x>270</x>
      <y>20</y>
      <width>171</width>
-     <height>101</height>
+     <height>111</height>
     </rect>
    </property>
    <property name="title">
@@ -42,7 +42,7 @@
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>50</y>
+      <y>60</y>
       <width>151</width>
       <height>43</height>
      </rect>
@@ -235,28 +235,6 @@
    <property name="text">
     <string>Оновити</string>
    </property>
-  </widget>
-  <widget class="QWidget" name="">
-   <property name="geometry">
-    <rect>
-     <x>270</x>
-     <y>125</y>
-     <width>171</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <layout class="QHBoxLayout" name="horizontalLayout_2">
-    <item>
-     <widget class="QLabel" name="label_5">
-      <property name="text">
-       <string>ID</string>
-      </property>
-     </widget>
-    </item>
-    <item>
-     <widget class="QLineEdit" name="id_"/>
-    </item>
-   </layout>
   </widget>
  </widget>
  <tabstops>
