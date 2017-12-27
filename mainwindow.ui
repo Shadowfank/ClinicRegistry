@@ -97,28 +97,6 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="layoutWidget">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>160</y>
-       <width>251</width>
-       <height>41</height>
-      </rect>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout_2">
-      <item>
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Введіть ім'я лікаря</string>
-        </property>
-       </widget>
-      </item>
-      <item>
-       <widget class="QLineEdit" name="name_doctor_"/>
-      </item>
-     </layout>
-    </widget>
     <widget class="QLabel" name="label_6">
      <property name="geometry">
       <rect>
@@ -190,7 +168,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -209,6 +187,28 @@
       </item>
       <item>
        <widget class="QDateEdit" name="b_day"/>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>160</y>
+       <width>251</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Оберіть ім'я лікаря</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="name_doctor_"/>
       </item>
      </layout>
     </widget>
@@ -436,7 +436,6 @@
   <tabstop>date_come</tabstop>
   <tabstop>time_come</tabstop>
   <tabstop>pushButton_4</tabstop>
-  <tabstop>name_doctor_</tabstop>
   <tabstop>region_</tabstop>
   <tabstop>city_</tabstop>
   <tabstop>street_</tabstop>

@@ -1,8 +1,8 @@
  #include "patientlist.h"
 #include "ui_patientlist.h"
 
-patientlist::patientlist(QWidget *parent /*class MainWindow *_previous*/) :
-    QWidget(parent), /*previous(_previous),*/
+patientlist::patientlist(QWidget *parent) :
+    QWidget(parent),
     ui(new Ui::patientlist)
 {
     ui->setupUi(this);
@@ -90,5 +90,22 @@ void patientlist::on_pushButton_3_clicked()
 
 void patientlist::on_pushButton_5_clicked()
 {
+    mainWindow = new MainWindow(0, this, true, patientid);
+    mainWindow->setFixedSize(mainWindow->size());
+    mainWindow->show();
+}
 
+void patientlist::on_pushButton_6_clicked()
+{
+    hide();
+    mainWindow = new MainWindow(this);
+    mainWindow->setFixedSize(mainWindow->size());
+    mainWindow->show();
+}
+
+void patientlist::on_pushButton_7_clicked()
+{
+    mainWindow = new MainWindow(this);
+    mainWindow->setFixedSize(mainWindow->size());
+    mainWindow->show();
 }

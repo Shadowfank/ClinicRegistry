@@ -15,9 +15,9 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = 0, class patientlist *s_ = 0, bool _mode = false, int _patientID = 0);
     ~MainWindow();
-    getpatient();
+    //getpatient();
 
 private slots:
 
@@ -33,6 +33,8 @@ private:
     Ui::MainWindow *ui;
     class doctorlist *d;
     class patientlist *s;
+    bool mode;
+    int patientID;
 };
 
 #endif // MAINWINDOW_H

@@ -31,7 +31,7 @@ void login::on_login_Button_clicked()
     if(db.log_in(username,hashStr)) {
             QMessageBox::information(this, "Вхід", "Логін та пароль правильні!");
             hide();
-            mainWindow = new MainWindow(this);
+            mainWindow = new MainWindow();
             mainWindow->setFixedSize(mainWindow->size());
             mainWindow->show();
         }

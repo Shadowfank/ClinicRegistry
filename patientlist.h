@@ -31,13 +31,17 @@ private slots:
 
     void on_pushButton_5_clicked();
 
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::patientlist *ui;
     database db;
     //class MainWindow *previous;
     QSqlQueryModel *model;
     int patientid;
-    //MainWindow  *mainWindow;
+    MainWindow  *mainWindow;
 };
 
 #endif // PATIENTLIST_H
