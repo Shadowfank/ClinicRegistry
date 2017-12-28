@@ -190,7 +190,7 @@
       </item>
      </layout>
     </widget>
-    <widget class="QWidget" name="">
+    <widget class="QWidget" name="layoutWidget">
      <property name="geometry">
       <rect>
        <x>10</x>
@@ -208,7 +208,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="name_doctor_"/>
+       <widget class="QComboBox" name="name_doctor_"/>
       </item>
      </layout>
     </widget>

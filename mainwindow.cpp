@@ -5,7 +5,12 @@ MainWindow::MainWindow(QWidget *parent, class patientlist *s_, bool _mode, int _
     QMainWindow(parent), s(s_), patientID(_patientID), mode(_mode),
     ui(new Ui::MainWindow)
 {
+    //d = new doctorlist(0,this);
+    s = new patientlist();
     ui->setupUi(this);
+//    if(s->isVisible())
+//        ui->pushButton_3->setEnabled(0);
+    loadNameOfDocs();
     if(mode)
     {
         database db;
@@ -14,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent, class patientlist *s_, bool _mode, int _
         QDate birth_day, datecome;
         QTime timecome;
         bool sex;
-
+        model = new QSqlQueryModel();
         query.prepare("select `patients`.`id`,`surname`, `fname`, `thname`, `birth_day`, `datecome`, `timecome`, `sex`, `region`, `city`, `street`, `house`, `apartment`, `phone_number`, `name_doctor` from `patients` where `patients`.`id` = :id;");
         query.bindValue(":id",patientID);
         query.exec();
@@ -50,7 +55,7 @@ MainWindow::MainWindow(QWidget *parent, class patientlist *s_, bool _mode, int _
         ui->house_->setText(house);
         ui->apartment_->setText(apartment);
         ui->phone_number_->setText(phone_number);
-        ui->name_doctor_->setText(name_doctor);
+        ui->name_doctor_->setCurrentText(name_doctor);
     }
 
 }
@@ -60,6 +65,19 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::loadNameOfDocs()
+{
+    database db;
+    QString surname, fname, thname;
+    QSqlQuery query =  QSqlQuery(db.r_db());
+    model = new QSqlQueryModel();
+    query.prepare("select concat (surname, ' ', fname, ' ', thname) AS fname from doctors");
+    query.exec();
+    model->setQuery(query);
+    ui->name_doctor_->setModel(model);
+    qDebug()<<(model->rowCount());
+}
+
 void MainWindow::on_pushButton_clicked()
 {
     database db;
@@ -67,6 +85,16 @@ void MainWindow::on_pushButton_clicked()
     QDate birth_day, datecome;
     QTime timecome;
     bool sex;
+    QSqlQuery query =  QSqlQuery(db.r_db());
+
+ /*   surname = query.record().indexOf("Name");
+    fname = query.record().indexOf("Surname");
+    thname = query.record().indexOf("Thname");
+    while (query.next()) {
+          ui->name_doctor_->addItem(query.value(surname).toString());
+          ui->name_doctor_->addItem(query.value(fname).toString());
+          ui->name_doctor_->addItem(query.value(thname).toString());
+        }*/
 
     surname=ui->sname->text();
     fname=ui->name->text();
@@ -81,9 +109,8 @@ void MainWindow::on_pushButton_clicked()
     house=ui->house_->text();
     apartment=ui->apartment_->text();
     phone_number=ui->phone_number_->text();
-    name_doctor=ui->name_doctor_->text();
+    name_doctor=ui->name_doctor_->currentText();
 
-    QSqlQuery query =  QSqlQuery(db.r_db());
     query.prepare("insert into patients (`id`, `surname`, `fname`, `thname`, `birth_day`, `datecome`, `timecome`, `sex`, `region`, `city`, `street`, `house`, `apartment`, `phone_number`, `name_doctor`)"
                "values (NULL,:surname,:fname,:thname,:birth_day,:datecome,:timecome,:sex,:region,:city,:street,:house,:apartment, :phone_number, :name_doctor)");
     query.bindValue(":surname",surname);
@@ -118,7 +145,10 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-    s = new patientlist();
+    //if(s->isVisible())
+      //  ui->pushButton_3->setEnabled(0);
+    //else{
+    hide();
     s->setFixedSize(s->size());
     s->show();
 }
@@ -144,7 +174,7 @@ void MainWindow::on_pushButton_5_clicked()
     house=ui->house_->text();
     apartment=ui->apartment_->text();
     phone_number=ui->phone_number_->text();
-    name_doctor=ui->name_doctor_->text();
+    name_doctor=ui->name_doctor_->currentText();
 
     QSqlQuery query =  QSqlQuery(db.r_db());
     query.prepare("replace into patients (`id`, `surname`, `fname`, `thname`, `birth_day`, `datecome`, `timecome`, `sex`, `region`, `city`, `street`, `house`, `apartment`, `phone_number`, `name_doctor`)"
@@ -168,9 +198,13 @@ void MainWindow::on_pushButton_5_clicked()
     if(query.exec()){
         QMessageBox::information(0,"Редагування даних","Дані оновлені!",QMessageBox::Ok);
         qDebug() << query.lastError() << "\n" << query.lastQuery();
-        if(s)
         s->getpatient();
 }
     else
           QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
+}
+
+void MainWindow::on_pushButton_4_clicked()
+{
+
 }
