@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget *parent, class patientlist *s_, bool _mode, int _
     s = new patientlist();
     ui->setupUi(this);
 //    if(s->isVisible())
-//        ui->pushButton_3->setEnabled(0);
+//        ui->pushButton_3->setEnabled(0)
     loadNameOfDocs();
     if(mode)
     {

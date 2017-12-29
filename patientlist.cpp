@@ -57,7 +57,7 @@ void patientlist::on_pushButton_4_clicked()
 {
     database db;
     QSqlQuery query;
-    query.prepare("Delete from patients where id=:id");
+    query.prepare("delete from patients where id=:id");
     query.bindValue(":id",patientid);
 
     if (query.exec()){
@@ -74,7 +74,7 @@ void patientlist::on_psearch_Button_clicked()
     QString surname;
     QSqlQuery query;
     model = new QSqlQueryModel();
-    query.prepare("SELECT * FROM patients WHERE surname like '%"+ui->patient_search->text()+"%'");
+    query.prepare("selrct * from patients where surname like '%"+ui->patient_search->text()+"%'");
     query.exec();
     qDebug()<<query.lastError();
     model->setQuery(query);
