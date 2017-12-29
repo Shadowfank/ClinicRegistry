@@ -17,7 +17,6 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0, class patientlist *s_ = 0, bool _mode = false, int _patientID = 0);
     ~MainWindow();
-    void loadNameOfDocs();
     //getpatient();
 
 private slots:
@@ -30,13 +29,10 @@ private slots:
 
     void on_pushButton_5_clicked();
 
-    void on_pushButton_4_clicked();
-
 private:
     Ui::MainWindow *ui;
     class doctorlist *d;
     class patientlist *s;
-    QSqlQueryModel *model;
     bool mode;
     int patientID;
 };

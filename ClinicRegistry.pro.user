@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
+<<<<<<< HEAD
 <!-- Written by QtCreator 4.4.1, 2017-12-29T09:48:12. -->
+=======
+<!-- Written by QtCreator 4.4.1, 2017-12-27T09:00:58. -->
+>>>>>>> parent of 70e44ac... comboboxes an fixes
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
