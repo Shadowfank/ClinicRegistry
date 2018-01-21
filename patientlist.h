@@ -15,6 +15,7 @@ class patientlist : public QWidget
 public:
     explicit patientlist(QWidget *parent = 0);
     ~patientlist();
+    void CorrectColums();
     void getpatient();
 
 private slots:
@@ -41,7 +42,8 @@ private:
     //class MainWindow *previous;
     QSqlQueryModel *model;
     int patientid;
-    MainWindow  *mainWindow;
+    class MainWindow  *mainWindow;
+    class patientlist *s;
 };
 
 #endif // PATIENTLIST_H

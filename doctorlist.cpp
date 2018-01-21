@@ -37,8 +37,10 @@ void doctorlist::getdoctor()
     model->setHeaderData(7, Qt::Horizontal, QObject::tr("До"));
     ui->tableDoctors->setModel(model);
     ui->tableDoctors->setColumnWidth(0,20);
-}
+    ui->tableDoctors->setColumnWidth(6,40);
+    ui->tableDoctors->setColumnWidth(7,38);
 
+}
 
 void doctorlist::on_tableDoctors_clicked(const QModelIndex &index)
 {
