@@ -12,6 +12,8 @@ class patientlist : public QWidget
 {
     Q_OBJECT
 
+
+
 public:
     explicit patientlist(QWidget *parent = 0);
     ~patientlist();

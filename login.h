@@ -28,6 +28,8 @@ private slots:
 
     void on_lineEdit_password_returnPressed();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::login *ui;
     MainWindow  *mainWindow;

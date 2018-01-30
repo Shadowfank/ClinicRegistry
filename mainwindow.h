@@ -8,17 +8,21 @@
 namespace Ui {
 class MainWindow;
 }
-
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
+
+
+
 
 public:
     explicit MainWindow(QWidget *parent = 0, class patientlist *s_ = 0, /*class ChoiceTime *y_ = 0,*/ bool _mode = false, int _patientID = 0);
     ~MainWindow();
     void loadNameOfDocs();
+        void updateData();
     //getpatient();
 
+//    slots:
 
 private slots:
 
@@ -41,6 +45,8 @@ private slots:
     void on_action_6_triggered();
 
     void on_action_5_triggered();
+
+    void on_pushButton_4_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -50,3 +50,8 @@ void login::on_lineEdit_password_returnPressed()
 {
     on_login_Button_clicked();
 }
+
+void login::on_pushButton_clicked()
+{
+    qApp->quit();
+}

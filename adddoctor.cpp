@@ -6,6 +6,7 @@ adddoctor::adddoctor(QWidget *parent, class doctorlist *prev_, bool _mode, int _
     ui(new Ui::adddoctor)
 {
     ui->setupUi(this);
+    ui->pushButton->setEnabled(0);
     if (mode)
     {
         database db;

@@ -7,6 +7,8 @@ patientlist::patientlist(QWidget *parent) :
 {
     ui->setupUi(this);
     getpatient();
+    //connect(ui->pushButton_7, SIGNAL(clicked()), this, SIGNAL(updateData()));
+
 }
 
 patientlist::~patientlist()
@@ -16,13 +18,14 @@ patientlist::~patientlist()
 
 void patientlist::getpatient()
 {
+
     QSqlQuery query = QSqlQuery(db.r_db());
     model = new QSqlQueryModel();
     query.prepare("select `id`,`surname`, `fname`, `thname`, `birth_day`, `datecome`, `timecome`, `sex`, `region`, `city`, `street`, `house`, `apartment`, `phone_number`, `name_doctor` from patients");
     query.exec();
     model->setQuery(query);
     ui->tablePatients->setModel(model);
-    model->setQuery(query);
+    model->setQuery(query); 
     model->setHeaderData(1, Qt::Horizontal, QObject::tr("Прізвище"));
     model->setHeaderData(2, Qt::Horizontal, QObject::tr("Ім'я"));
     model->setHeaderData(3, Qt::Horizontal, QObject::tr("По-батькові"));
@@ -38,6 +41,7 @@ void patientlist::getpatient()
     model->setHeaderData(13, Qt::Horizontal, QObject::tr("Тел. номер"));
     model->setHeaderData(14, Qt::Horizontal, QObject::tr("Ім'я лікаря"));
     ui->tablePatients->setModel(model);
+    ui->tablePatients->hideColumn(0);
     ui->tablePatients->setColumnWidth(0,30);
     ui->tablePatients->setColumnWidth(4,110);
     ui->tablePatients->setColumnWidth(5,67);
@@ -124,6 +128,7 @@ void patientlist::on_pushButton_6_clicked()
 
 void patientlist::on_pushButton_7_clicked()
 {
+
     //s = new patientlist();
     mainWindow = new MainWindow(this);
     mainWindow->setFixedSize(mainWindow->size());

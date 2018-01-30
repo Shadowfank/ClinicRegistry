@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>621</width>
+    <width>630</width>
     <height>431</height>
    </rect>
   </property>
@@ -148,11 +148,35 @@
       <rect>
        <x>10</x>
        <y>230</y>
-       <width>251</width>
+       <width>171</width>
        <height>25</height>
       </rect>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <item row="0" column="1">
+       <widget class="QTimeEdit" name="time_come">
+        <property name="accelerated">
+         <bool>false</bool>
+        </property>
+        <property name="dateTime">
+         <datetime>
+          <hour>8</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2000</year>
+          <month>1</month>
+          <day>1</day>
+         </datetime>
+        </property>
+        <property name="time">
+         <time>
+          <hour>8</hour>
+          <minute>0</minute>
+          <second>0</second>
+         </time>
+        </property>
+       </widget>
+      </item>
       <item row="0" column="0">
        <widget class="QDateEdit" name="date_come">
         <property name="date">
@@ -161,27 +185,6 @@
           <month>1</month>
           <day>1</day>
          </date>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="pushButton_4">
-        <property name="text">
-         <string>Обрати час</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QTimeEdit" name="time_come">
-        <property name="accelerated">
-         <bool>false</bool>
-        </property>
-        <property name="time">
-         <time>
-          <hour>8</hour>
-          <minute>0</minute>
-          <second>0</second>
-         </time>
         </property>
        </widget>
       </item>
@@ -205,7 +208,18 @@
        </widget>
       </item>
       <item>
-       <widget class="QDateEdit" name="b_day"/>
+       <widget class="QDateEdit" name="b_day">
+        <property name="dateTime">
+         <datetime>
+          <hour>0</hour>
+          <minute>0</minute>
+          <second>0</second>
+          <year>2018</year>
+          <month>1</month>
+          <day>1</day>
+         </datetime>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -400,7 +414,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>621</width>
+     <width>630</width>
      <height>21</height>
     </rect>
    </property>
@@ -466,7 +480,6 @@
   <tabstop>sex_</tabstop>
   <tabstop>date_come</tabstop>
   <tabstop>time_come</tabstop>
-  <tabstop>pushButton_4</tabstop>
   <tabstop>region_</tabstop>
   <tabstop>city_</tabstop>
   <tabstop>street_</tabstop>

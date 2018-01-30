@@ -1,15 +1,20 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+//#include <QPalette>
 MainWindow::MainWindow(QWidget *parent, /*class ChoiceTime *y_,*/ class patientlist *s_, bool _mode, int _patientID) :
     QMainWindow(parent), s(s_), /*y(y_),*/ mode(_mode), patientID(_patientID),
+    //QBrush tb(Qt::transparent),
     ui(new Ui::MainWindow)
 {
+
     //d = new doctorlist(0,this);
     s = new patientlist();
     ui->setupUi(this);
-//    if(s->isVisible())
+   // s->setVisible(false);
 //        ui->pushButton_3->setEnabled(0);
+    //updateData();
+    //connect(MainWindow, SIGNAL(updateData()), this, SLOT(RefreshText()));
+    ui->pushButton->setEnabled(0);
     loadNameOfDocs();
     if(mode)
     {
@@ -46,7 +51,7 @@ MainWindow::MainWindow(QWidget *parent, /*class ChoiceTime *y_,*/ class patientl
         ui->name->setText(fname);
         ui->tname->setText(thname);
         ui->b_day->setDate(birth_day);
-        ui->date_come->setDate(datecome);//
+        ui->date_come->setDate(datecome);
         ui->time_come->setTime(timecome);
         ui->sex_->setCurrentIndex(sex);
         ui->region_->setText(region);
@@ -56,6 +61,10 @@ MainWindow::MainWindow(QWidget *parent, /*class ChoiceTime *y_,*/ class patientl
         ui->apartment_->setText(apartment);
         ui->phone_number_->setText(phone_number);
         ui->name_doctor_->setCurrentText(name_doctor);
+//        ui->pushButton_3->setVisible(true);
+        //ui->pushButton_3->setPalette(QPalette(tb, tb, tb, tb, tb, tb, tb, tb, tb));
+            //ui->pushButton_3->setPalette(QPalette());
+
     }
 
 }
@@ -136,12 +145,14 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
+
     //if(s->isVisible())
       //  ui->pushButton_3->setEnabled(0);
     //else{
     hide();
     s->setFixedSize(s->size());
     s->show();
+    //ui->pushButton_3->setVisible(false);
 }
 
 void MainWindow::on_pushButton_5_clicked()
@@ -197,7 +208,7 @@ void MainWindow::on_pushButton_5_clicked()
 
 void MainWindow::on_action_3_triggered()
 {
-    QMessageBox::about(this, "Про програму", "<font color=\"green\"><u>Про Програму:</u></font> <br>Програма ClinicRegystry призначена для реєістрації пацієнтів на прийом до лікаря у реєстратурі поліклініки.</br> <br>Програма написана на язиці С++ з використанням компілятора Qt Creator</br>");
+    QMessageBox::about(this, "Про програму", "<font color=\"green\"><u>Про Програму:</u></font> <br>Програма ClinicRegystry призначена для реєстрації пацієнтів на прийом до лікаря у реєстратурі поліклініки.</br> <br>Програма написана мовою С++ з використанням компілятора Qt Creator</br>");
 }
 
 void MainWindow::on_action_triggered()
@@ -265,6 +276,10 @@ void MainWindow::on_action_2_triggered()
     this->ui->house_->clear();
     this->ui->apartment_->clear();
     this->ui->phone_number_->clear();
+    this->ui->b_day->setDate(QDate(2018,1,1));
+    this->ui->date_come->setDate(QDate(2018,1,1));
+    this->ui->time_come->setTime(QTime(8,00));
+    this->ui->name_doctor_->setCurrentIndex(0);
 }
 
 void MainWindow::on_action_6_triggered()

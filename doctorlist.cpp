@@ -7,6 +7,11 @@ doctorlist::doctorlist(QWidget *parent, class MainWindow *_prev) :
 {
     ui->setupUi(this);
     getdoctor();
+//    ui->pushButton_3->setEnabled(0);
+//    ui->pushButton_4->setEnabled(0);
+//    ui->pushButton_5->setEnabled(0);
+//    ui->pushButton_6->setEnabled(0);
+
 }
 
 doctorlist::~doctorlist()
@@ -36,6 +41,7 @@ void doctorlist::getdoctor()
     model->setHeaderData(6, Qt::Horizontal, QObject::tr("З"));
     model->setHeaderData(7, Qt::Horizontal, QObject::tr("До"));
     ui->tableDoctors->setModel(model);
+    ui->tableDoctors->hideColumn(0);
     ui->tableDoctors->setColumnWidth(0,20);
     ui->tableDoctors->setColumnWidth(6,40);
     ui->tableDoctors->setColumnWidth(7,38);
