@@ -7,10 +7,11 @@ doctorlist::doctorlist(QWidget *parent, class MainWindow *_prev) :
 {
     ui->setupUi(this);
     getdoctor();
-//    ui->pushButton_3->setEnabled(0);
-//    ui->pushButton_4->setEnabled(0);
-//    ui->pushButton_5->setEnabled(0);
-//    ui->pushButton_6->setEnabled(0);
+    if(prev==0){
+        ui->pushButton_3->setEnabled(0);
+        ui->pushButton_4->setEnabled(0);
+        ui->pushButton_5->setEnabled(0);
+    }
 
 }
 
@@ -77,15 +78,8 @@ void doctorlist::on_dsearch_Button_clicked()
     model = new QSqlQueryModel();
     query.prepare("SELECT * FROM doctors WHERE surname like '%"+ui->doctor_search->text()+"%'");
     query.exec();
-    //qDebug()<<query.lastError();
     model->setQuery(query);
     ui->tableDoctors->setModel(model);
-}
-
-void doctorlist::on_pushButton_6_clicked()
-{
-    hide();
-    prev->show();
 }
 
 void doctorlist::on_pushButton_clicked()

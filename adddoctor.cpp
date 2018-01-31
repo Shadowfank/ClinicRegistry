@@ -6,7 +6,6 @@ adddoctor::adddoctor(QWidget *parent, class doctorlist *prev_, bool _mode, int _
     ui(new Ui::adddoctor)
 {
     ui->setupUi(this);
-    ui->pushButton->setEnabled(0);
     if (mode)
     {
         database db;
@@ -37,7 +36,10 @@ adddoctor::adddoctor(QWidget *parent, class doctorlist *prev_, bool _mode, int _
         ui->day_->setCurrentText(day);
         ui->time_one->setTime(time_1);
         ui->time_two->setTime(time_2);
+        ui->pushButton->setEnabled(0);
     }
+    else
+        ui->pushButton_2->setEnabled(0);
 }
 
 adddoctor::~adddoctor()

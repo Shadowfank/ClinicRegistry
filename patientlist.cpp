@@ -7,7 +7,6 @@ patientlist::patientlist(QWidget *parent) :
 {
     ui->setupUi(this);
     getpatient();
-    //connect(ui->pushButton_7, SIGNAL(clicked()), this, SIGNAL(updateData()));
 
 }
 
@@ -120,7 +119,7 @@ void patientlist::on_pushButton_5_clicked()
 
 void patientlist::on_pushButton_6_clicked()
 {
-    mainWindow = new MainWindow(this);
+    mainWindow = new MainWindow();
     hide();
     mainWindow->setFixedSize(mainWindow->size());
     mainWindow->show();
@@ -129,7 +128,6 @@ void patientlist::on_pushButton_6_clicked()
 void patientlist::on_pushButton_7_clicked()
 {
 
-    //s = new patientlist();
     mainWindow = new MainWindow(this);
     mainWindow->setFixedSize(mainWindow->size());
     mainWindow->show();

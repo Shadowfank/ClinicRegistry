@@ -1,20 +1,12 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-//#include <QPalette>
-MainWindow::MainWindow(QWidget *parent, /*class ChoiceTime *y_,*/ class patientlist *s_, bool _mode, int _patientID) :
-    QMainWindow(parent), s(s_), /*y(y_),*/ mode(_mode), patientID(_patientID),
-    //QBrush tb(Qt::transparent),
+MainWindow::MainWindow(QWidget *parent, class patientlist *s_, bool _mode, int _patientID) :
+    QMainWindow(parent), s(s_), mode(_mode), patientID(_patientID),
     ui(new Ui::MainWindow)
 {
 
-    //d = new doctorlist(0,this);
     s = new patientlist();
     ui->setupUi(this);
-   // s->setVisible(false);
-//        ui->pushButton_3->setEnabled(0);
-    //updateData();
-    //connect(MainWindow, SIGNAL(updateData()), this, SLOT(RefreshText()));
-    ui->pushButton->setEnabled(0);
     loadNameOfDocs();
     if(mode)
     {
@@ -61,10 +53,14 @@ MainWindow::MainWindow(QWidget *parent, /*class ChoiceTime *y_,*/ class patientl
         ui->apartment_->setText(apartment);
         ui->phone_number_->setText(phone_number);
         ui->name_doctor_->setCurrentText(name_doctor);
-//        ui->pushButton_3->setVisible(true);
-        //ui->pushButton_3->setPalette(QPalette(tb, tb, tb, tb, tb, tb, tb, tb, tb));
-            //ui->pushButton_3->setPalette(QPalette());
+        ui->pushButton->setEnabled(0);
+        ui->pushButton_3->setEnabled(0);
 
+    }
+    else ui->pushButton_5->setEnabled(0);
+    if(parent!=0){
+        ui->pushButton_3->setEnabled(0);
+        ui->pushButton_5->setEnabled(0);
     }
 
 }
@@ -145,14 +141,9 @@ void MainWindow::on_pushButton_2_clicked()
 
 void MainWindow::on_pushButton_3_clicked()
 {
-
-    //if(s->isVisible())
-      //  ui->pushButton_3->setEnabled(0);
-    //else{
     hide();
     s->setFixedSize(s->size());
     s->show();
-    //ui->pushButton_3->setVisible(false);
 }
 
 void MainWindow::on_pushButton_5_clicked()

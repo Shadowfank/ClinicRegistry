@@ -41,7 +41,6 @@ private slots:
 private:
     Ui::patientlist *ui;
     database db;
-    //class MainWindow *previous;
     QSqlQueryModel *model;
     int patientid;
     class MainWindow  *mainWindow;
