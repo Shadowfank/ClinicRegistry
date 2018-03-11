@@ -132,3 +132,10 @@ void patientlist::on_pushButton_7_clicked()
     mainWindow->setFixedSize(mainWindow->size());
     mainWindow->show();
 }
+
+void patientlist::on_pushButton_clicked()
+{
+    database db;
+    QSqlQuery query;
+    getpatient();
+}

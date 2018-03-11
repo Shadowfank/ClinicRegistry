@@ -125,6 +125,7 @@ void MainWindow::on_pushButton_clicked()
     query.bindValue(":name_doctor",name_doctor);
 
     if (query.exec()){
+        s->getpatient();
         QMessageBox::information(this, tr("Збереження"), tr("Збережено"),QMessageBox::Ok);
         s->getpatient();
     }
@@ -187,11 +188,11 @@ void MainWindow::on_pushButton_5_clicked()
     query.bindValue(":apartment",apartment);
     query.bindValue(":phone_number",phone_number);
     query.bindValue(":name_doctor",name_doctor);
-
     if(query.exec()){
         QMessageBox::information(0,"Редагування даних","Дані оновлені!",QMessageBox::Ok);
+                s->getpatient();
         qDebug() << query.lastError() << "\n" << query.lastQuery();
-        s->getpatient();
+
 }
     else
           QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
@@ -242,10 +243,9 @@ void MainWindow::on_action_triggered()
     query.bindValue(":apartment",apartment);
     query.bindValue(":phone_number",phone_number);
     query.bindValue(":name_doctor",name_doctor);
-
     if (query.exec()){
+                s->getpatient();
         QMessageBox::information(this, tr("Збереження"), tr("Збережено"),QMessageBox::Ok);
-        s->getpatient();
     }
     else
         QMessageBox::critical(this, tr("Помилка"), query.lastError().text());
